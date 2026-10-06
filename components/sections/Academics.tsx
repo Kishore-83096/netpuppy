@@ -6,8 +6,7 @@ const academicCards = [
     number: "01",
     symbol: "A",
     title: "Academic Excellence",
-    description:
-      "A strong academic foundation supported by thoughtful teaching and continuous learning.",
+    description: "Academic excellence.",
     image:
       "https://tis.edu.in/_next/static/media/CBSEHeader.6fa1d7c5.png",
   },
@@ -15,17 +14,15 @@ const academicCards = [
     number: "02",
     symbol: "✦",
     title: "Holistic Development",
-    description:
-      "Encouraging students to develop confidence, creativity, communication, and leadership.",
+    description: "Holistic development.",
     image:
       "https://tis.edu.in/_next/static/media/SPORTS.5b77ae97.webp",
   },
   {
     number: "03",
     symbol: "∞",
-    title: "Future Ready",
-    description:
-      "Preparing students with the skills, mindset, and curiosity needed for a changing world.",
+    title: "Global Leaders",
+    description: "Preparing students to be global leaders.",
     image:
       "https://tis.edu.in/_next/static/media/image2.c5a88387.webp",
   },
@@ -37,7 +34,7 @@ export default function Academics() {
       <Reveal>
         <SectionHeading
           eyebrow="Academics"
-          title="Learning designed for tomorrow."
+          title="Our CBSE curriculum"
         />
       </Reveal>
 

@@ -78,16 +78,19 @@ export default function Navbar() {
 
         <div className={`nav-links ${menuOpen ? "is-open" : ""}`}>
           <a href="#about" onClick={closeMenu}>
-            About
+            About TIS
           </a>
           <a href="#academics" onClick={closeMenu}>
             Academics
           </a>
+          <a href="#boarding" onClick={closeMenu}>
+            Boarding Life
+          </a>
           <a href="#facilities" onClick={closeMenu}>
-            Facilities
+            Beyond Academics
           </a>
           <a href="#admissions" onClick={closeMenu}>
-            Admissions
+            Admission
           </a>
         </div>
 
@@ -137,7 +140,7 @@ export default function Navbar() {
         </button>
 
         <Button
-          href="#admissions"
+          href="https://admission.tis.edu.in"
           className="nav-cta"
           onClick={closeMenu}
         >

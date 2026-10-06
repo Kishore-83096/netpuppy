@@ -11,6 +11,23 @@ A responsive, single-page homepage concept for Tulas International School (TIS).
 - **Admissions portal:** [admission.tis.edu.in](https://admission.tis.edu.in)
 - **Live demo:** https://netpuppy-eta.vercel.app/
 
+## Assignment requirements checklist
+
+| Assignment requirement | Status | Why |
+| --- | --- | --- |
+| Build a modern, single-page TIS homepage | **Implemented** | The homepage is assembled from reusable hero, About TIS, Academics, Boarding Life, Beyond Academics, Contact/Admission, and footer sections. |
+| Retain TIS brand identity and core content | **Implemented in the redesign** | The page uses TIS branding, official school imagery, and content based on the current TIS homepage. This is a redesigned landing page, not a complete copy of every page or feature on `tis.edu.in`. |
+| Use a modern frontend framework, styling, and animation | **Implemented** | Built with Next.js, React, TypeScript, CSS, and Motion for React. |
+| Organize components and use semantic page structure | **Implemented** | Content is separated into reusable section, layout, UI, and animation components; the page uses semantic landmarks. |
+| Implement at least two standout features | **Implemented: all four** | Custom cursor, scroll-triggered reveals, light/dark theme switcher, and scroll progress indicator are included. |
+| Make the page responsive for mobile, tablet, and desktop | **Implemented and checked** | Responsive layouts and navigation have been checked at 375px, 768px, and desktop widths. |
+| Include clear calls to action | **Implemented** | Apply Now links to the official admissions portal; Enquire Now opens an email to TIS. |
+| Provide README setup and project documentation | **Implemented** | This README includes project links, stack details, local setup, commands, and architecture notes. |
+| Pass the local production build and lint checks | **Verified** | `npm run build` and `npm run lint` both pass in the current project. |
+| Provide a public GitHub repository | **Available; latest local changes need publishing** | The public repository is linked above. Push the current local changes so the repository contains the latest version. |
+| Provide a public live deployment | **Available; redeploy latest changes** | The live demo is linked above. Redeploy after pushing to make sure it includes the current local version. |
+| Submit the Google Form | **Not verified — action required** | Form submission is external to this project. Submit it using the [TIS assignment form](https://forms.gle/1njGvsG8a2MW8cRR7). |
+
 ## Live demo preview
 
 This preview image is now used as the main visual for the live demo link and social sharing card:
@@ -23,11 +40,11 @@ The homepage is composed in this order:
 
 1. **Sticky navigation** — the school logo, links to page sections, a responsive menu, a theme switch, and an admissions call to action.
 2. **Hero** — introductory message, links to admissions and the About section, school image, and animated feature cards.
-3. **About** — a short description of the school's approach to education.
-4. **Academics** — three visual cards describing academic excellence, holistic development, and future readiness.
-5. **Facilities** — cards for classrooms, sports, and technology, with supporting images.
-6. **Student experience** — a Discover, Connect, and Grow overview.
-7. **Admissions** — a call to action linking to the official admissions portal.
+3. **About TIS** — the school's establishment information and its statement about boarding and day school excellence.
+4. **Academics** — the CBSE curriculum, academic excellence, holistic development, and preparing students to be global leaders.
+5. **Boarding Life** — the school's description of a community that encourages leadership, innovation, and lifelong learning.
+6. **Beyond Academics** — activities shown on the TIS homepage, including Taekwondo, Football, Shooting Range, and Horse Riding.
+7. **Contact and admission** — TIS contact details, an enquiry email link, and a link to the official admissions portal.
 8. **Footer** — school identity and links to the page sections.
 
 ### Visual design and interaction
@@ -36,10 +53,11 @@ The homepage is composed in this order:
 - Shared CSS variables define the palette, typography, spacing, borders, shadows, and corner radii.
 - Light theme is the default. The header's theme button switches between light and dark appearances; the selection is stored in the browser's `localStorage` under `tis-theme`.
 - Motion provides entrance reveals, the scroll-progress bar, and subtle movement in selected hero and admissions elements.
+- The About section has a Read more disclosure, and the Boarding Life topics expand to show more information when selected.
 - The custom pointer and click ring are enabled only for mouse-like pointers. They are not used on touch-first devices.
 - Layout breakpoints in the global stylesheet adapt the page for tablet, mobile, and small-phone widths.
 - Keyboard focus styles and the `prefers-reduced-motion` setting are supported.
-- The navigation and hero links scroll to page sections. The admissions calls to action lead to `https://admission.tis.edu.in`.
+- Homepage copy and section labels follow the current TIS homepage. The admission calls to action lead to `https://admission.tis.edu.in`.
 
 ## Technology
 
@@ -195,7 +213,7 @@ Think of the project as a few simple layers:
 3. **Components render each part.** Files in `components/sections/` render the actual school content. Shared UI components keep buttons and headings consistent. The layout components provide the navigation and footer.
 4. **CSS controls the appearance.** `app/globals.css` defines shared color and spacing variables, component styles, responsive rules, and light/dark theme colors. Components use those styles through class names.
 5. **Client-side behavior runs in the browser.** Interactive components marked with `"use client"` handle behavior that needs browser APIs or user interaction, such as the mobile menu, saved theme preference, pointer effects, scroll position, and animations.
-6. **Static and remote assets are displayed.** Files in `public/` can be served directly by the app. This homepage also loads school images and its logo from TIS and facility photos from Unsplash.
+6. **Static and remote assets are displayed.** Files in `public/` can be served directly by the app. This homepage loads school imagery and its logo from TIS.
 
 In short: **layout provides the shared frame → page assembles the homepage → components render the content → CSS styles it → the browser runs the interactive parts.**
 
@@ -214,11 +232,11 @@ In short: **layout provides the shared frame → page assembles the homepage →
 | `components/layout/Navbar.tsx` | Owns the sticky header, section navigation, mobile-menu state, and light/dark theme control and persistence. |
 | `components/layout/Footer.tsx` | Renders the school identity, footer navigation, and copyright line. |
 | `components/sections/Hero.tsx` | Renders the headline, introductory copy, hero calls to action, and animated visual. |
-| `components/sections/About.tsx` | Presents the school's introductory statement and learning approach. |
-| `components/sections/Academics.tsx` | Defines and renders the three academic feature cards. |
-| `components/sections/Facilities.tsx` | Defines and renders the three campus/facility cards and their images. |
-| `components/sections/StudentExperience.tsx` | Defines and renders the Discover, Connect, and Grow items. |
-| `components/sections/Admissions.tsx` | Presents the admissions message and links to the official application portal. |
+| `components/sections/About.tsx` | Presents TIS establishment information, its boarding and day school statement, and an expandable details panel. |
+| `components/sections/Academics.tsx` | Defines and renders the CBSE curriculum feature cards. |
+| `components/sections/Facilities.tsx` | Defines and renders activities shown on the TIS homepage. |
+| `components/sections/StudentExperience.tsx` | Presents expandable Boarding Life details about leadership, innovation, and lifelong learning. |
+| `components/sections/Admissions.tsx` | Presents TIS contact details and links to enquiry and the official application portal. |
 | `components/ui/Button.tsx` | Shared link styled as a button, with optional styling and click behavior. |
 | `components/ui/SectionHeading.tsx` | Shared eyebrow-and-title heading used by content sections. |
 | `public/` | Static files served from the site root. It includes the project architecture diagram and default Next.js starter SVGs; the starter SVGs are not currently referenced by the homepage components. |

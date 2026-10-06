@@ -1057,6 +1057,42 @@
   .about-statement p {
     font-size: 0.9rem !important;
   }
+
+  .about-more-wrap {
+    margin-top: 16px;
+  }
+
+  .about-more p + p {
+    margin-top: 12px;
+  }
+
+  .content-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 14px;
+    padding: 8px 0;
+
+    background: none;
+    border: 0;
+    color: var(--primary);
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 750;
+
+    cursor: pointer;
+  }
+
+  .content-toggle span {
+    color: var(--secondary);
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  .content-toggle:hover {
+    color: var(--secondary);
+  }
 }
 
 /* ==========================================================================
@@ -1474,15 +1510,7 @@
   }
 
   .experience-item {
-    display: grid;
-
-    grid-template-columns: 72px minmax(0, 1fr) 32px;
-
-    align-items: center;
-
-    gap: 24px;
-
-    padding: 27px 12px;
+    padding: 0 12px;
 
     border-bottom: 1px solid var(--border);
     border-radius: var(--radius-sm);
@@ -1500,6 +1528,24 @@
     background: var(--surface-soft);
   }
 
+  .experience-toggle {
+    width: 100%;
+    min-height: 88px;
+
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr) 32px;
+    align-items: center;
+    gap: 24px;
+
+    padding: 18px 0;
+
+    background: transparent;
+    border: 0;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
   .experience-number {
     color: var(--secondary);
 
@@ -1509,8 +1555,8 @@
     letter-spacing: 0.04em;
   }
 
-  .experience-item h3 {
-    margin: 0 0 6px;
+  .experience-title {
+    display: block;
 
     color: var(--foreground);
 
@@ -1522,7 +1568,11 @@
     line-height: 1.2;
   }
 
-  .experience-item p {
+  .experience-details {
+    padding: 0 56px 24px 96px;
+  }
+
+  .experience-details p {
     max-width: 650px;
 
     margin: 0;
@@ -1534,17 +1584,20 @@
   }
 
   .experience-arrow {
+    justify-self: end;
+
     color: var(--secondary);
 
-    font-size: 1.2rem;
-
-    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1;
 
     transition: transform var(--transition-fast);
   }
 
-  .experience-item:hover .experience-arrow {
-    transform: translate(3px, -3px);
+  .experience-item:hover .experience-arrow,
+  .experience-item.is-expanded .experience-arrow {
+    transform: rotate(180deg);
   }
 }
 
@@ -1852,6 +1905,53 @@
   }
 }
 
+@media (min-width: 761px) and (max-width: 1050px) {
+  .site-nav {
+    gap: 14px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: var(--page-padding);
+    right: var(--page-padding);
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+
+    margin: 0;
+    padding: 10px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 11px;
+    border-radius: 8px;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+}
+
 /* ==========================================================================
    Mobile
    ========================================================================== */
@@ -2083,11 +2183,16 @@
   }
 
   .experience-item {
+    padding-inline: 5px;
+  }
+
+  .experience-toggle {
+    min-height: 76px;
     grid-template-columns: 38px minmax(0, 1fr) 22px;
 
     gap: 13px;
 
-    padding: 23px 5px;
+    padding: 18px 0;
   }
 
   .experience-item:hover {
@@ -2095,11 +2200,15 @@
     padding-right: 10px;
   }
 
-  .experience-item h3 {
+  .experience-title {
     font-size: 1.2rem;
   }
 
-  .experience-item p {
+  .experience-details {
+    padding: 0 22px 20px 51px;
+  }
+
+  .experience-details p {
     font-size: 0.8125rem;
   }
 
@@ -2217,13 +2326,12 @@
     font-size: 1.25rem;
   }
 
-  .experience-item {
+  .experience-toggle {
     grid-template-columns: 30px minmax(0, 1fr) 18px;
-
     gap: 10px;
   }
 
-  .experience-item h3 {
+  .experience-title {
     font-size: 1.1rem;
   }
 

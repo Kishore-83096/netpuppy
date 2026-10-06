@@ -18,18 +18,19 @@ export default function Footer() {
             unoptimized
           />
         </a>
-        <p className="footer-tagline">Learning today. Leading tomorrow.</p>
+        <p className="footer-tagline">Boarding and Day School Excellence</p>
       </div>
 
       <nav className="footer-links" aria-label="Footer navigation">
-        <a href="#about">About</a>
+        <a href="#about">About TIS</a>
         <a href="#academics">Academics</a>
-        <a href="#facilities">Facilities</a>
-        <a href="#admissions">Admissions</a>
+        <a href="#boarding">Boarding Life</a>
+        <a href="#facilities">Beyond Academics</a>
+        <a href="#admissions">Admission</a>
       </nav>
 
       <p className="footer-copy">
-        © 2026 Tulas International School. All rights reserved.
+        Tulas International School
       </p>
     </footer>
   );

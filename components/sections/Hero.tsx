@@ -9,47 +9,47 @@ export default function Hero() {
     <section className="hero">
       <div className="hero-content">
         <Reveal>
-          <p className="hero-eyebrow">
-            Welcome to Tulas International School
-          </p>
+          <p className="hero-eyebrow">Welcome to Tulas International School (TIS)</p>
         </Reveal>
 
         <Reveal delay={0.1}>
           <h1>
-            Inspiring young minds.
-            <span>Shaping future leaders.</span>
+            Welcome to Tulas International School (TIS)
           </h1>
         </Reveal>
 
         <Reveal delay={0.2}>
           <p className="hero-description">
-            A place where curiosity, character, and excellence come together
-            to create a meaningful learning journey.
+            TIS is one of India’s top boarding and day schools in Dehradun,
+            India. Our CBSE curriculum focuses on academic excellence, holistic
+            development, and preparing students to be global leaders. Explore
+            our programs, campus life, achievements, and why TIS is the
+            preferred choice for parents across India.
           </p>
         </Reveal>
 
         <Reveal delay={0.3}>
           <div className="hero-actions">
-            <Button href="#admissions">Explore Admissions</Button>
-            <Button href="#about">Discover Tulas</Button>
+            <Button href="https://admission.tis.edu.in">Apply Now</Button>
+            <Button href="#academics">Academics</Button>
           </div>
         </Reveal>
 
         <Reveal delay={0.4}>
           <div className="hero-meta">
             <div>
-              <strong>Excellence</strong>
-              <span>in every learner</span>
+              <strong>Boarding and Day School</strong>
+              <span>Dehradun, India</span>
             </div>
 
             <div>
-              <strong>Curiosity</strong>
-              <span>at every step</span>
+              <strong>CBSE Curriculum</strong>
+              <span>Academic excellence</span>
             </div>
 
             <div>
-              <strong>Character</strong>
-              <span>for the future</span>
+              <strong>Holistic Development</strong>
+              <span>Global leaders</span>
             </div>
           </div>
         </Reveal>
@@ -92,13 +92,13 @@ export default function Hero() {
             </div>
 
             <div className="hero-card-content">
-              <span>Learn</span>
-              <span>Explore</span>
-              <span>Grow</span>
+              <span>Academic excellence</span>
+              <span>Holistic development</span>
+              <span>Global leaders</span>
             </div>
 
             <div className="hero-card-bottom">
-              <span>Education for tomorrow</span>
+              <span>Boarding and Day School Excellence</span>
               <span>↗</span>
             </div>
           </motion.div>
@@ -114,8 +114,8 @@ export default function Hero() {
           >
             <span>✦</span>
             <div>
-              <strong>Future Ready</strong>
-              <small>Learning with purpose</small>
+              <strong>CBSE Curriculum</strong>
+              <small>Academic excellence</small>
             </div>
           </motion.div>
 
@@ -128,8 +128,8 @@ export default function Hero() {
               ease: "easeInOut",
             }}
           >
-            <strong>100%</strong>
-            <span>Curiosity</span>
+            <strong>TIS</strong>
+            <span>Dehradun, India</span>
           </motion.div>
         </motion.div>
       </Reveal>

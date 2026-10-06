@@ -12,17 +12,30 @@ export default function Admissions() {
       <div className="admissions-content">
         <Reveal>
           <SectionHeading
-            eyebrow="Admissions"
-            title="Begin your journey with Tulas."
+            eyebrow="Contact Us."
+            title="Tulas International School"
           />
 
           <p className="admissions-description">
-            Take the first step towards an inspiring educational experience
-            where curiosity, character, and excellence come together.
+            Admission Helpline No. +91-98379 83791
+            <br />
+            info@tis.edu.in
+            <br />
+            Tulas International School Dhoolkot, P.O – Selaqui, Chakrata Road,
+            Dehradun-248011 (Uttarakhand)
+            <br />
+            Landline No. 0135-2699444, 0135-2699666
           </p>
 
-          <Button href="https://admission.tis.edu.in" className="admissions-button">
-            Start Your Application
+          <Button href="mailto:info@tis.edu.in">
+            Enquire Now!
+            <span>↗</span>
+          </Button>
+          <Button
+            href="https://admission.tis.edu.in"
+            className="admissions-button"
+          >
+            Apply Now
             <span>↗</span>
           </Button>
         </Reveal>
@@ -43,8 +56,8 @@ export default function Admissions() {
           <div className="admissions-orbit admissions-orbit-two" />
 
           <div className="admissions-side-content">
-            <span>ADMISSIONS</span>
-            <strong>2026</strong>
+            <span>BOARDING AND DAY SCHOOL</span>
+            <strong>TIS</strong>
             <Image
               src="https://tis.edu.in/_next/static/media/schoolLogo.95f6e121.png"
               alt=""

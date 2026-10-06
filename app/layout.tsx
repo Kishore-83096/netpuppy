@@ -9,13 +9,13 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://netpuppy-eta.vercel.app"),
-  title: "Tulas International School",
+  title: "Best Boarding School in Dehradun | CBSE Co Ed School India",
   description:
-    "Tulas International School — inspiring young minds and shaping future leaders.",
+    "TIS is one of India’s top boarding and day schools in Dehradun, India. Our CBSE curriculum focuses on academic excellence, holistic development, and preparing students to be global leaders.",
   openGraph: {
-    title: "Tulas International School",
+    title: "Best Boarding School in Dehradun | CBSE Co Ed School India",
     description:
-      "Tulas International School — inspiring young minds and shaping future leaders.",
+      "TIS is one of India’s top boarding and day schools in Dehradun, India. Our CBSE curriculum focuses on academic excellence, holistic development, and preparing students to be global leaders.",
     url: "https://netpuppy-eta.vercel.app",
     siteName: "Tulas International School",
     images: [
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tulas International School",
+    title: "Best Boarding School in Dehradun | CBSE Co Ed School India",
     description:
-      "Tulas International School — inspiring young minds and shaping future leaders.",
+      "TIS is one of India’s top boarding and day schools in Dehradun, India. Our CBSE curriculum focuses on academic excellence, holistic development, and preparing students to be global leaders.",
     images: ["/live-demo-preview.png"],
   },
 };

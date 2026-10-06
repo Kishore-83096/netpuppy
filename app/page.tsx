@@ -20,8 +20,8 @@ export default function Home() {
         <Hero />
         <About />
         <Academics />
-        <Facilities />
         <StudentExperience />
+        <Facilities />
         <Admissions />
       </main>
 

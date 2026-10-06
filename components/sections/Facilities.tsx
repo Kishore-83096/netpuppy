@@ -5,30 +5,30 @@ import SectionHeading from "../ui/SectionHeading";
 const facilities = [
   {
     number: "01",
-    title: "Modern Classrooms",
-    description:
-      "Thoughtfully designed spaces that encourage curiosity, collaboration, and focused learning.",
+    title: "Taekwondo",
     image:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
-    alt: "Students learning in a classroom",
+      "https://tis.edu.in/_next/static/media/karate.4020fba5.webp",
+    alt: "Taekwondo",
   },
   {
     number: "02",
-    title: "Sports & Activities",
-    description:
-      "Opportunities for students to stay active, build teamwork, and discover their strengths beyond academics.",
+    title: "Football",
     image:
-      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=80",
-    alt: "Students participating in sports",
+      "https://tis.edu.in/_next/static/media/Image%202.0c5295c9.webp",
+    alt: "Football",
   },
   {
     number: "03",
-    title: "Technology & Innovation",
-    description:
-      "Technology-rich learning experiences that help students explore ideas and develop future-ready skills.",
+    title: "Shooting Range",
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
-    alt: "Students working with technology",
+      "https://tis.edu.in/_next/static/media/Image%203.21dc9e69.webp",
+    alt: "Shooting Range",
+  },
+  {
+    number: "04",
+    title: "Horse Riding",
+    image: "https://tis.edu.in/_next/static/media/polo.973ddbae.webp",
+    alt: "Horse Riding",
   },
 ];
 
@@ -37,8 +37,8 @@ export default function Facilities() {
     <section id="facilities" className="facilities-section">
       <Reveal>
         <SectionHeading
-          eyebrow="Our Campus"
-          title="A space to learn, play, and grow."
+          eyebrow="Explore our programs, campus life, achievements"
+          title="Beyond Academics"
         />
       </Reveal>
 
@@ -60,13 +60,6 @@ export default function Facilities() {
 
               <div className="facility-content">
                 <h3>{facility.title}</h3>
-
-                <p>{facility.description}</p>
-
-                <span className="facility-link">
-                  Explore
-                  <span>↗</span>
-                </span>
               </div>
             </article>
           </Reveal>
