@@ -3270,6 +3270,14 @@
 }
 
 @media (max-width: 760px) {
+  :root:not([data-theme="dark"]) .nav-links a {
+    color: var(--foreground-soft);
+  }
+
+  :root:not([data-theme="dark"]) .nav-links a:hover {
+    color: var(--primary);
+  }
+
   #about {
     gap: 28px;
   }
