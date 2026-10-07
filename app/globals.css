@@ -42,6 +42,8 @@
     --border-strong: rgba(23, 15, 35, 0.2);
     --section-divider: #c9b8e8;
     --subsection-divider: #e5e1eb;
+    --scrollbar-track: #f5f4f8;
+    --scrollbar-thumb: #c9b8e8;
 
     /* -----------------------------------------------------------------------
        Shadows
@@ -129,6 +131,27 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+    scrollbar-width: thin;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border: 2px solid var(--scrollbar-track);
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
   }
 
   body {
@@ -2375,6 +2398,8 @@
     --border-strong: rgba(248, 246, 252, 0.2);
     --section-divider: rgba(162, 116, 255, 0.42);
     --subsection-divider: rgba(248, 246, 252, 0.13);
+    --scrollbar-track: #15121b;
+    --scrollbar-thumb: #563b80;
 
     --shadow-xs: 0 2px 8px rgba(0, 0, 0, 0.16);
     --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.2);
