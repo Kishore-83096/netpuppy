@@ -3249,6 +3249,14 @@
 
 /* Keep responsive layout overrides above the component layer in the cascade. */
 @media (max-width: 1050px) {
+  :root:not([data-theme="dark"]) .nav-links a {
+    color: var(--foreground-soft);
+  }
+
+  :root:not([data-theme="dark"]) .nav-links a:hover {
+    color: var(--primary);
+  }
+
   #about {
     grid-template-columns: minmax(0, 1fr);
   }
