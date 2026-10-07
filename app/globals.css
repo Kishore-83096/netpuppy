@@ -12,51 +12,55 @@
 @layer base {
   :root {
     /* -----------------------------------------------------------------------
-       Premium TIS palette
+       Black, white, and violet palette sampled from the supplied reference
        ----------------------------------------------------------------------- */
 
-    --background: #f7f6f2;
-    --background-alt: #edf1f4;
+    color-scheme: light;
 
-    --foreground: #182a39;
-    --foreground-soft: #334b5d;
+    --background: #ffffff;
+    --background-alt: #f5f4f8;
 
-    --primary: #1b405a;
-    --primary-dark: #143348;
-    --primary-deep: #10293b;
+    --foreground: #17151b;
+    --foreground-soft: #403b49;
 
-    --secondary: #b9573d;
-    --secondary-dark: #91432f;
-    --secondary-light: #e69b7d;
+    --primary: #7c43e8;
+    --primary-dark: #642fc8;
+    --primary-deep: #0b080f;
 
-    --muted: #637482;
-    --muted-light: #82909a;
+    --secondary: #854cf0;
+    --secondary-dark: #6935cf;
+    --secondary-light: #a87aff;
+
+    --muted: #706b79;
+    --muted-light: #928d9a;
 
     --surface: #ffffff;
-    --surface-soft: #eef2f5;
+    --surface-soft: #f5f1fc;
 
-    --border: #d8e0e5;
-    --border-light: rgba(27, 64, 90, 0.1);
-    --border-strong: rgba(27, 64, 90, 0.2);
+    --border: #e5e1eb;
+    --border-light: rgba(23, 15, 35, 0.1);
+    --border-strong: rgba(23, 15, 35, 0.2);
+    --section-divider: #c9b8e8;
+    --subsection-divider: #e5e1eb;
 
     /* -----------------------------------------------------------------------
        Shadows
        ----------------------------------------------------------------------- */
 
     --shadow-xs:
-      0 2px 8px rgba(16, 41, 59, 0.04);
+      0 2px 8px rgba(20, 13, 31, 0.04);
 
     --shadow-sm:
-      0 6px 18px rgba(16, 41, 59, 0.07);
+      0 6px 18px rgba(20, 13, 31, 0.07);
 
     --shadow-md:
-      0 12px 30px rgba(16, 41, 59, 0.1);
+      0 12px 30px rgba(20, 13, 31, 0.1);
 
     --shadow-lg:
-      0 20px 48px rgba(16, 41, 59, 0.13);
+      0 20px 48px rgba(20, 13, 31, 0.13);
 
     --shadow-xl:
-      0 30px 75px rgba(16, 41, 59, 0.18);
+      0 30px 75px rgba(20, 13, 31, 0.18);
 
     /* -----------------------------------------------------------------------
        Layout
@@ -169,7 +173,7 @@
   }
 
   ::selection {
-    background: rgba(185, 87, 61, 0.2);
+    background: rgba(124, 67, 232, 0.18);
     color: var(--primary-dark);
   }
 
@@ -242,7 +246,7 @@
   }
 
   .custom-cursor.is-interactive {
-    filter: drop-shadow(0 4px 9px rgba(16, 41, 59, 0.46));
+    filter: drop-shadow(0 4px 9px rgba(20, 13, 31, 0.46));
   }
 
   .custom-cursor-click-ring {
@@ -254,9 +258,9 @@
     width: 28px;
     height: 28px;
 
-    border: 2px solid #2448e8;
+    border: 2px solid var(--primary);
     border-radius: 50%;
-    background: rgba(36, 72, 232, 0.12);
+    background: rgba(111, 59, 215, 0.12);
 
     opacity: 0;
     pointer-events: none;
@@ -274,7 +278,7 @@
     overflow: visible;
 
     transform-origin: 0 0;
-    filter: drop-shadow(0 2px 3px rgba(20, 51, 72, 0.2));
+    filter: drop-shadow(0 2px 3px rgba(29, 12, 55, 0.2));
     transition: transform var(--transition-fast);
   }
 
@@ -325,9 +329,9 @@
 
     padding: 8px 0;
 
-    background: rgba(247, 246, 242, 0.92);
+    background: rgba(255, 255, 255, 0.92);
 
-    border-bottom: 1px solid rgba(27, 64, 90, 0.1);
+    border-bottom: 1px solid rgba(23, 15, 35, 0.1);
 
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -363,7 +367,7 @@
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
 
-    box-shadow: 0 4px 14px rgba(16, 41, 59, 0.08);
+    box-shadow: 0 4px 14px rgba(20, 13, 31, 0.08);
 
     overflow: hidden;
 
@@ -413,6 +417,9 @@
 
     padding: 5px 0;
 
+    background: transparent;
+    border: 0;
+
     color: var(--foreground-soft);
 
     font-size: 0.84rem;
@@ -423,36 +430,10 @@
       transform var(--transition-fast);
   }
 
-  .nav-links a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: -5px;
-
-    width: 100%;
-    height: 2px;
-
-    background: var(--secondary);
-
-    border-radius: 999px;
-
-    transform: scaleX(0);
-    transform-origin: right;
-
-    transition: transform var(--transition-normal);
-  }
-
   .nav-links a:hover {
     color: var(--primary);
 
     transform: translateY(-1px);
-  }
-
-  .nav-links a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
   }
 
   /* -------------------------------------------------------------------------
@@ -541,7 +522,7 @@
 
     cursor: pointer;
 
-    box-shadow: 0 5px 15px rgba(16, 41, 59, 0.12);
+    box-shadow: 0 5px 15px rgba(20, 13, 31, 0.12);
 
     transition:
       background-color var(--transition-fast),
@@ -644,6 +625,11 @@
 
 @layer components {
   .hero {
+    position: relative;
+    isolation: isolate;
+
+    margin-top: 12px;
+
     min-height: clamp(620px, 80vh, 760px);
 
     display: grid;
@@ -658,20 +644,33 @@
 
     padding:
       clamp(68px, 8vw, 96px)
-      0
+      clamp(28px, 5vw, 64px)
       clamp(76px, 9vw, 110px);
 
-    border-bottom: 1px solid var(--border);
+    background:
+      linear-gradient(
+        90deg,
+        rgba(7, 6, 9, 0.9) 0%,
+        rgba(16, 10, 27, 0.76) 48%,
+        rgba(16, 10, 27, 0.48) 100%
+      ),
+      url("/school-campus.webp") center / cover;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
   }
 
   .hero-content {
     min-width: 0;
+    position: relative;
+    z-index: 1;
   }
 
   .hero-eyebrow {
     margin: 0 0 18px;
 
-    color: var(--primary);
+    color: var(--secondary-light);
 
     font-size: 0.7rem;
     font-weight: 800;
@@ -687,7 +686,7 @@
 
     margin: 0;
 
-    color: var(--foreground);
+    color: #ffffff;
 
     font-family: var(--font-heading);
 
@@ -701,7 +700,7 @@
   .hero h1 span {
     display: block;
 
-    color: var(--secondary);
+    color: var(--secondary-light);
   }
 
   .hero-description {
@@ -709,7 +708,7 @@
 
     margin: 27px 0 0;
 
-    color: var(--muted);
+    color: rgba(255, 255, 255, 0.82);
 
     font-size: 1.02rem;
     line-height: 1.8;
@@ -737,7 +736,7 @@
     margin-top: 52px;
     padding-top: 22px;
 
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--subsection-divider);
   }
 
   .hero-meta div {
@@ -750,14 +749,14 @@
   }
 
   .hero-meta strong {
-    color: var(--primary);
+    color: #ffffff;
 
     font-size: 0.84rem;
     font-weight: 750;
   }
 
   .hero-meta span {
-    color: var(--muted);
+    color: rgba(255, 255, 255, 0.72);
 
     font-size: 0.72rem;
   }
@@ -768,6 +767,7 @@
 
   .hero-visual {
     position: relative;
+    z-index: 1;
 
     min-height: 500px;
 
@@ -777,28 +777,7 @@
   }
 
   .hero-school-image {
-    position: absolute;
-
-    inset: 28px 8px;
-
-    background-image:
-      linear-gradient(
-        145deg,
-        rgba(16, 41, 59, 0.24),
-        rgba(16, 41, 59, 0.04) 55%,
-        rgba(27, 64, 90, 0.22)
-      ),
-      url("https://tis.edu.in/_next/static/media/schoolTopView.6e263e02.webp");
-
-    background-size: cover;
-    background-position: center;
-
-    border: 1px solid rgba(255, 255, 255, 0.72);
-    border-radius: var(--radius-xl);
-
-    box-shadow: var(--shadow-xl);
-
-    overflow: hidden;
+    display: none;
   }
 
   .hero-orb {
@@ -818,7 +797,7 @@
     width: 145px;
     height: 145px;
 
-    background: rgba(185, 87, 61, 0.18);
+    background: rgba(124, 67, 232, 0.28);
   }
 
   .hero-orb-two {
@@ -828,7 +807,7 @@
     width: 120px;
     height: 120px;
 
-    background: rgba(27, 64, 90, 0.16);
+    background: rgba(111, 59, 215, 0.16);
   }
 
   .hero-grid-lines {
@@ -998,7 +977,7 @@
 
     padding: var(--section-padding) 0;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--section-divider);
   }
 
   #about > div {
@@ -1103,7 +1082,7 @@
   #academics {
     padding: var(--section-padding) 0;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--section-divider);
   }
 
   .academic-grid {
@@ -1164,30 +1143,30 @@
     background-image:
       linear-gradient(
         180deg,
-        rgba(16, 41, 59, 0.12),
-        rgba(16, 41, 59, 0.78)
+        rgba(28, 11, 56, 0.12),
+        rgba(28, 11, 56, 0.78)
       ),
-      url("https://tis.edu.in/_next/static/media/CBSEHeader.6fa1d7c5.png");
+      url("/academics-cbse.png");
   }
 
   .academic-grid > div:nth-child(2) .academic-card {
     background-image:
       linear-gradient(
         180deg,
-        rgba(16, 41, 59, 0.12),
-        rgba(16, 41, 59, 0.78)
+        rgba(28, 11, 56, 0.12),
+        rgba(28, 11, 56, 0.78)
       ),
-      url("https://tis.edu.in/_next/static/media/SPORTS.5b77ae97.webp");
+      url("/academics-sports.webp");
   }
 
   .academic-grid > div:nth-child(3) .academic-card {
     background-image:
       linear-gradient(
         180deg,
-        rgba(16, 41, 59, 0.12),
-        rgba(16, 41, 59, 0.78)
+        rgba(28, 11, 56, 0.12),
+        rgba(28, 11, 56, 0.78)
       ),
-      url("https://tis.edu.in/_next/static/media/image2.c5a88387.webp");
+      url("/academics-leadership.webp");
   }
 
   .academic-card::after {
@@ -1201,9 +1180,9 @@
     background:
       linear-gradient(
         180deg,
-        rgba(16, 41, 59, 0.04) 0%,
-        rgba(16, 41, 59, 0.24) 38%,
-        rgba(16, 41, 59, 0.94) 100%
+        rgba(28, 11, 56, 0.04) 0%,
+        rgba(28, 11, 56, 0.24) 38%,
+        rgba(28, 11, 56, 0.94) 100%
       );
 
     transition: background var(--transition-normal);
@@ -1212,7 +1191,7 @@
   .academic-card:hover {
     transform: translateY(-6px);
 
-    border-color: rgba(230, 155, 125, 0.72);
+    border-color: rgba(168, 122, 255, 0.78);
 
     box-shadow: var(--shadow-lg);
   }
@@ -1221,9 +1200,9 @@
     background:
       linear-gradient(
         180deg,
-        rgba(16, 41, 59, 0.02) 0%,
-        rgba(16, 41, 59, 0.18) 36%,
-        rgba(16, 41, 59, 0.96) 100%
+        rgba(28, 11, 56, 0.02) 0%,
+        rgba(28, 11, 56, 0.18) 36%,
+        rgba(28, 11, 56, 0.96) 100%
       );
   }
 
@@ -1251,7 +1230,7 @@
     width: 35px;
     height: 35px;
 
-    background: rgba(16, 41, 59, 0.38);
+    background: rgba(28, 11, 56, 0.38);
 
     border: 1px solid rgba(255, 255, 255, 0.34);
     border-radius: 50%;
@@ -1340,7 +1319,7 @@
   #facilities {
     padding: var(--section-padding) 0;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--section-divider);
   }
 
   .facility-grid {
@@ -1407,7 +1386,7 @@
     height: 36px;
     place-items: center;
 
-    background: rgba(247, 246, 242, 0.94);
+    background: rgba(255, 255, 255, 0.94);
     border: 1px solid rgba(255, 255, 255, 0.72);
     border-radius: var(--radius-xs);
 
@@ -1489,7 +1468,7 @@
   .student-experience {
     padding: var(--section-padding) 0;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--section-divider);
   }
 
   .student-experience-intro {
@@ -1506,13 +1485,13 @@
   .experience-list {
     width: 100%;
 
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--subsection-divider);
   }
 
   .experience-item {
     padding: 0 12px;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--subsection-divider);
     border-radius: var(--radius-sm);
 
     transition:
@@ -1625,12 +1604,12 @@
     padding: clamp(48px, 6vw, 70px);
 
     background:
-      radial-gradient(
-        circle at 90% 10%,
-        rgba(230, 155, 125, 0.14),
-        transparent 32%
+      linear-gradient(
+        90deg,
+        rgba(7, 6, 9, 0.82),
+        rgba(12, 8, 18, 0.64)
       ),
-      var(--primary);
+      url("/admissions-background.png") center / cover;
 
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-xl);
@@ -1663,15 +1642,21 @@
     line-height: 1.8;
   }
 
+  .admissions-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
   .admissions-button,
   .admissions-button:visited {
     background: var(--secondary);
 
     border: 1px solid rgba(255, 255, 255, 0.78);
 
-    color: var(--primary-dark) !important;
+    color: #ffffff !important;
 
-    box-shadow: 0 5px 15px rgba(16, 41, 59, 0.2);
+    box-shadow: 0 5px 15px rgba(29, 12, 55, 0.2);
 
     transition:
       background-color var(--transition-fast),
@@ -1683,24 +1668,24 @@
 
   .admissions-button:hover,
   .admissions-button:focus-visible {
-    background: var(--secondary-light);
+    background: var(--secondary-dark);
 
-    border-color: var(--primary-dark);
+    border-color: var(--secondary-dark);
 
-    color: var(--primary-dark) !important;
+    color: #ffffff !important;
 
     transform: translateY(-3px);
 
-    box-shadow: 0 10px 24px rgba(16, 41, 59, 0.28);
+    box-shadow: 0 10px 24px rgba(29, 12, 55, 0.28);
   }
 
   .admissions-button span {
-    color: var(--primary-dark) !important;
+    color: #ffffff !important;
   }
 
   .admissions-button:hover span,
   .admissions-button:focus-visible span {
-    color: var(--primary-dark) !important;
+    color: #ffffff !important;
     transform: translate(2px, -2px);
   }
 
@@ -1719,11 +1704,10 @@
     background:
       linear-gradient(
         145deg,
-        rgba(16, 41, 59, 0.62),
-        rgba(16, 41, 59, 0.82)
+        rgba(28, 11, 56, 0.62),
+        rgba(28, 11, 56, 0.82)
       ),
-      url("https://tis.edu.in/_next/static/media/schoolTopView.6e263e02.webp")
-        center / cover;
+      url("/school-campus.webp") center / cover;
 
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: var(--radius-lg);
@@ -1772,7 +1756,7 @@
 
     margin-top: 14px;
 
-    background: rgba(247, 246, 242, 0.96);
+    background: rgba(255, 255, 255, 0.96);
     border: 1.5px solid var(--secondary);
     border-radius: var(--radius-sm);
 
@@ -1795,7 +1779,7 @@
 
     padding: 10px 0;
 
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--section-divider);
   }
 
   .footer-brand {
@@ -1939,10 +1923,6 @@
     border-radius: 8px;
   }
 
-  .nav-links a::after {
-    display: none;
-  }
-
   .mobile-menu-button {
     display: block;
   }
@@ -2011,10 +1991,8 @@
     padding: 10px;
 
     background: var(--surface);
-
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-
     box-shadow: var(--shadow-lg);
   }
 
@@ -2029,11 +2007,7 @@
   }
 
   .nav-links a:hover {
-    background: var(--surface-soft);
-  }
-
-  .nav-links a::after {
-    display: none;
+    background: transparent;
   }
 
   .nav-cta {
@@ -2049,14 +2023,21 @@
      ------------------------------------------------------------------------- */
 
   .hero {
+    display: flex;
+    flex-direction: column;
+
     min-height: auto;
 
     gap: 44px;
 
     padding:
       58px
-      0
+      clamp(20px, 5vw, 40px)
       74px;
+  }
+
+  .hero > :last-child {
+    order: -1;
   }
 
   .hero h1 {
@@ -2091,12 +2072,6 @@
 
   .hero-visual {
     min-height: 390px;
-  }
-
-  .hero-school-image {
-    inset: 18px 0;
-
-    border-radius: var(--radius-lg);
   }
 
   .hero-grid-lines {
@@ -2367,29 +2342,31 @@
   :root[data-theme="dark"] {
     color-scheme: dark;
 
-    --background: #111a21;
-    --background-alt: #18242d;
+    --background: #0b090f;
+    --background-alt: #15121b;
 
-    --foreground: #e8eef2;
-    --foreground-soft: #c4d0d8;
+    --foreground: #f8f6fc;
+    --foreground-soft: #ded9e8;
 
-    --primary: #315d75;
-    --primary-dark: #24485c;
-    --primary-deep: #0c1820;
+    --primary: #925df5;
+    --primary-dark: #7440d9;
+    --primary-deep: #070609;
 
-    --secondary: #df896d;
-    --secondary-dark: #c56f55;
-    --secondary-light: #f1ad91;
+    --secondary: #a274ff;
+    --secondary-dark: #8050e3;
+    --secondary-light: #bd9aff;
 
-    --muted: #a5b3bd;
-    --muted-light: #8496a2;
+    --muted: #b4adbf;
+    --muted-light: #938b9d;
 
-    --surface: #19252e;
-    --surface-soft: #222f39;
+    --surface: #17141d;
+    --surface-soft: #211c2b;
 
-    --border: #34444f;
-    --border-light: rgba(226, 237, 244, 0.09);
-    --border-strong: rgba(226, 237, 244, 0.19);
+    --border: #393240;
+    --border-light: rgba(248, 246, 252, 0.1);
+    --border-strong: rgba(248, 246, 252, 0.2);
+    --section-divider: rgba(162, 116, 255, 0.42);
+    --subsection-divider: rgba(248, 246, 252, 0.13);
 
     --shadow-xs: 0 2px 8px rgba(0, 0, 0, 0.16);
     --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.2);
@@ -2447,13 +2424,13 @@
   }
 
   :root[data-theme="dark"] .site-header {
-    background: rgba(17, 26, 33, 0.92);
+    background: rgba(11, 9, 15, 0.92);
     border-bottom-color: var(--border-light);
   }
 
   :root[data-theme="dark"] .hero-actions .ui-button:last-child,
   :root[data-theme="dark"] .hero-actions .ui-button:last-child:visited {
-    background: rgba(25, 37, 46, 0.88);
+    background: rgba(23, 20, 29, 0.88);
     color: var(--foreground) !important;
   }
 
@@ -2464,14 +2441,858 @@
 
   :root[data-theme="dark"] .hero-card,
   :root[data-theme="dark"] .hero-floating-badge {
-    background: rgba(25, 37, 46, 0.94);
-    border-color: rgba(226, 237, 244, 0.14);
+    background: rgba(23, 20, 29, 0.94);
+    border-color: rgba(248, 246, 252, 0.14);
+  }
+
+  :root[data-theme="dark"] .hero-floating-badge strong {
+    color: var(--foreground);
+  }
+
+  :root[data-theme="dark"] .hero-floating-badge small {
+    color: var(--muted);
   }
 
   :root[data-theme="dark"] .facility-number,
   :root[data-theme="dark"] .admissions-circle {
-    background: rgba(25, 37, 46, 0.96);
+    background: rgba(23, 20, 29, 0.96);
     border-color: var(--border-strong);
   }
 
+}
+
+/* ==========================================================================
+   Editorial activity-led homepage
+   ========================================================================== */
+
+@layer components {
+  .hero {
+    min-height: 650px;
+    grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.8fr);
+    gap: clamp(34px, 6vw, 78px);
+    padding: clamp(48px, 6vw, 76px);
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 28% 24%, rgba(124, 67, 232, 0.44), transparent 43%),
+      linear-gradient(90deg, rgba(7, 6, 9, 0.94), rgba(7, 6, 9, 0.8) 55%, rgba(7, 6, 9, 0.5)),
+      url("/school-campus.webp") center / cover;
+  }
+
+  .hero-content {
+    max-width: 650px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #d5c2ff;
+    letter-spacing: 0.08em;
+  }
+
+  .hero h1 {
+    max-width: 12ch;
+    font-size: clamp(3.6rem, 6vw, 5.8rem);
+    line-height: 0.98;
+    letter-spacing: -0.065em;
+  }
+
+  .hero h1 span {
+    margin-top: 0.08em;
+    color: #a87aff;
+  }
+
+  .hero-description {
+    max-width: 48ch;
+    margin-top: 22px;
+    font-size: clamp(1rem, 1.3vw, 1.12rem);
+  }
+
+  .hero-actions {
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .hero .hero-actions .ui-button:last-child,
+  .hero .hero-actions .ui-button:last-child:visited {
+    border-color: rgba(255, 255, 255, 0.36);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff !important;
+  }
+
+  .hero .hero-actions .ui-button:last-child:hover {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  .hero .hero-actions .ui-button:last-child span {
+    color: #c3a5ff !important;
+  }
+
+  .hero-meta {
+    max-width: 600px;
+    gap: 18px;
+    margin-top: 42px;
+    padding-top: 18px;
+    border-color: rgba(255, 255, 255, 0.24);
+  }
+
+  .hero-meta div {
+    gap: 6px;
+  }
+
+  .hero-meta strong {
+    color: #c3a5ff;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-meta span {
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 0.78rem;
+  }
+
+  .hero > :last-child {
+    width: 100%;
+    min-width: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-visual {
+    min-height: 460px;
+    overflow: visible;
+    align-items: stretch;
+    justify-content: stretch;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 28px;
+    background: #211832;
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.36);
+    isolation: isolate;
+  }
+
+  .hero-visual::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 38% 0 0;
+    border-radius: inherit;
+    background: linear-gradient(transparent, rgba(9, 7, 13, 0.82));
+    pointer-events: none;
+  }
+
+  .hero-feature-image {
+    z-index: -1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
+  }
+
+  .hero-image-caption {
+    position: absolute;
+    z-index: 2;
+    right: 22px;
+    bottom: 22px;
+    left: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 0.88rem;
+    font-weight: 700;
+    animation: hero-caption-float 5s ease-in-out infinite;
+  }
+
+  .hero-image-caption span:last-child {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--primary);
+  }
+
+  .hero-floating-badge {
+    top: 28px;
+    right: auto;
+    left: -24px;
+    max-width: 230px;
+    background: rgba(255, 255, 255, 0.96);
+    border-color: rgba(255, 255, 255, 0.8);
+    animation: hero-badge-float 4.5s ease-in-out infinite;
+  }
+
+  .hero-floating-badge > span {
+    color: var(--primary);
+  }
+
+  .hero-floating-badge strong {
+    color: #211832;
+  }
+
+  .hero-floating-badge small {
+    color: #706b79;
+  }
+
+  #facilities,
+  #academics,
+  .student-experience,
+  #about {
+    padding-top: clamp(68px, 8vw, 104px);
+    padding-bottom: clamp(68px, 8vw, 104px);
+  }
+
+  #facilities {
+    margin-top: clamp(34px, 5vw, 64px);
+    padding: clamp(36px, 5vw, 58px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+
+  #facilities .section-heading {
+    max-width: 720px;
+    margin-bottom: 34px;
+  }
+
+  .facility-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .facility-card {
+    border-radius: 20px;
+    background: var(--background);
+    box-shadow: none;
+  }
+
+  .facility-image {
+    height: clamp(210px, 25vw, 300px);
+  }
+
+  .facility-image img {
+    object-position: center 42%;
+  }
+
+  .facility-number {
+    background: var(--surface);
+    border-color: rgba(255, 255, 255, 0.86);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .facility-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 17px 20px 19px;
+  }
+
+  .facility-content h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  .facility-content::after {
+    content: "↗";
+    display: grid;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--surface-soft);
+    color: var(--primary);
+    transition:
+      color var(--transition-fast),
+      background-color var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  .facility-card:hover .facility-content::after {
+    transform: translate(2px, -2px);
+    background: var(--primary);
+    color: #ffffff;
+  }
+
+  #about {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: clamp(36px, 7vw, 86px);
+  }
+
+  .about-copy {
+    min-width: 0;
+  }
+
+  .about-copy .section-heading {
+    margin-bottom: 26px;
+  }
+
+  .about-content {
+    display: grid;
+    gap: 20px;
+  }
+
+  .about-content .about-lead {
+    margin-bottom: 0;
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  }
+
+  .about-statement {
+    padding: 18px;
+    border: 0;
+    border-left: 3px solid var(--primary);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    background: var(--surface-soft);
+    box-shadow: none;
+  }
+
+  .about-visual {
+    position: relative;
+    min-height: 470px;
+    overflow: visible;
+    isolation: isolate;
+    border-radius: 28px;
+    background: var(--surface-soft);
+    isolation: isolate;
+  }
+
+  .about-campus-image {
+    z-index: -1;
+    object-fit: cover;
+    border-radius: 28px;
+  }
+
+  .about-visual::after {
+    content: "";
+    position: absolute;
+    inset: 55% 0 0;
+    border-radius: inherit;
+    background: linear-gradient(transparent, rgba(9, 7, 13, 0.62));
+    pointer-events: none;
+  }
+
+  .about-photo-stack {
+    position: absolute;
+    z-index: 1;
+    right: -24px;
+    bottom: 62px;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+  }
+
+  .about-small-image {
+    width: clamp(110px, 15vw, 170px);
+    height: clamp(140px, 18vw, 205px);
+    object-fit: cover;
+    border: 5px solid var(--surface);
+    border-radius: 100px;
+    box-shadow: var(--shadow-lg);
+    animation: about-image-float 5s ease-in-out infinite;
+  }
+
+  .about-small-image-two {
+    transform: translateY(-28px);
+    animation-name: about-image-float-raised;
+    animation-delay: -2.5s;
+  }
+
+  .about-image-label {
+    position: absolute;
+    z-index: 1;
+    bottom: 24px;
+    left: 24px;
+    color: white;
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+
+  .academic-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .academic-card {
+    min-height: 0;
+    display: block;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface);
+    color: var(--foreground);
+    box-shadow: var(--shadow-xs);
+    background-image: none;
+  }
+
+  #academics .academic-card {
+    background-image: none;
+  }
+
+  .academic-card::after {
+    display: none;
+  }
+
+  .academic-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background: var(--surface-soft);
+  }
+
+  .academic-image img {
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .academic-card:hover .academic-image img {
+    transform: scale(1.04);
+  }
+
+  .academic-number {
+    position: absolute;
+    z-index: 1;
+    top: 14px;
+    left: 14px;
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 50%;
+    background: rgba(11, 9, 15, 0.68);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 800;
+    backdrop-filter: blur(8px);
+  }
+
+  .academic-card-content {
+    position: static;
+    display: block;
+    padding: 22px;
+  }
+
+  .academic-symbol {
+    width: 40px;
+    height: 40px;
+    margin: 0 0 15px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--surface-soft);
+    color: var(--primary);
+    font-size: 1.1rem;
+    backdrop-filter: none;
+  }
+
+  .academic-card h3 {
+    margin: 0 0 8px;
+    color: var(--foreground);
+    font-size: 1.12rem;
+  }
+
+  .academic-card p {
+    max-width: 40ch;
+    color: var(--muted);
+    font-size: 0.86rem;
+  }
+
+  .academic-card-top {
+    display: none;
+  }
+
+  .student-experience-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.65fr);
+    align-items: end;
+    gap: 24px;
+  }
+
+  .student-experience-header .section-heading {
+    margin-bottom: 36px;
+  }
+
+  .student-experience-intro {
+    margin: 0 0 42px;
+  }
+
+  .experience-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    border: 0;
+  }
+
+  .experience-item {
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .experience-item:hover {
+    padding: 18px;
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .experience-toggle {
+    min-height: 70px;
+    grid-template-columns: 40px minmax(0, 1fr) 24px;
+    gap: 12px;
+    padding: 8px 0;
+  }
+
+  .experience-number {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--surface-soft);
+  }
+
+  .experience-title {
+    font-size: 1.12rem;
+  }
+
+  .experience-details {
+    padding: 12px 0 4px;
+  }
+
+  .admissions {
+    border-radius: 28px;
+  }
+
+  .site-header {
+    background: rgba(11, 9, 15, 0.96);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .nav-links a:hover {
+    background: transparent;
+    color: #ffffff;
+  }
+
+  .mobile-menu-button {
+    background: #17141d;
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  .mobile-menu-button span {
+    background: #ffffff;
+  }
+
+  .theme-toggle {
+    background: #17141d;
+    border-color: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+  }
+
+  footer {
+    gap: 28px;
+    padding: 22px 0;
+  }
+}
+
+@keyframes hero-caption-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes hero-badge-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes about-image-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes about-image-float-raised {
+  0%,
+  100% {
+    transform: translateY(-28px);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@media (max-width: 1050px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+    min-height: 580px;
+    padding: clamp(36px, 5vw, 54px);
+  }
+
+  .hero-visual {
+    min-height: 410px;
+  }
+
+  #about {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  }
+
+  .academic-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .academic-image {
+    height: 185px;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    gap: 28px;
+    padding: 30px 22px 34px;
+  }
+
+  .hero > :last-child {
+    order: -1;
+  }
+
+  .hero-visual {
+    width: calc(100% - 8px);
+    min-height: clamp(260px, 68vw, 410px);
+    margin: 0 auto;
+    border-radius: 22px;
+  }
+
+  .hero-floating-badge {
+    top: 16px;
+    right: auto;
+    left: -8px;
+    max-width: 190px;
+    padding: 10px 12px;
+  }
+
+  .hero h1 {
+    max-width: 13ch;
+    font-size: clamp(3rem, 11vw, 4.8rem);
+  }
+
+  .hero-meta {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .hero-meta span {
+    font-size: 0.68rem;
+  }
+
+  #facilities {
+    margin-top: 28px;
+    padding: 26px 18px;
+  }
+
+  .facility-grid,
+  .academic-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .facility-image {
+    height: clamp(135px, 34vw, 220px);
+  }
+
+  .facility-content {
+    padding: 13px;
+  }
+
+  .facility-content h3 {
+    font-size: 0.95rem;
+  }
+
+  .facility-content::after {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+  }
+
+  #about {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .about-visual {
+    min-height: clamp(300px, 74vw, 430px);
+    margin-right: 10px;
+  }
+
+  .about-photo-stack {
+    right: -10px;
+    bottom: 48px;
+    gap: 6px;
+  }
+
+  .about-small-image {
+    width: clamp(90px, 24vw, 140px);
+    height: clamp(120px, 31vw, 175px);
+    border-width: 4px;
+  }
+
+  .academic-image {
+    height: clamp(130px, 35vw, 210px);
+  }
+
+  .academic-card-content {
+    padding: 15px;
+  }
+
+  .academic-card h3 {
+    font-size: 1rem;
+  }
+
+  .academic-card p {
+    font-size: 0.8rem;
+  }
+
+  .student-experience-header {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .student-experience-intro {
+    margin: -18px 0 28px;
+  }
+
+  .experience-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    padding-inline: 16px;
+  }
+
+  .hero-visual {
+    min-height: 250px;
+  }
+
+  .hero-floating-badge {
+    left: -6px;
+    max-width: 170px;
+  }
+
+  .hero-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-grid,
+  .academic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-image {
+    height: 210px;
+  }
+
+  .academic-image {
+    height: 210px;
+  }
+}
+
+@layer components {
+  :root[data-theme="dark"] .hero .hero-content .hero-actions a.ui-button,
+  :root[data-theme="dark"] .hero .hero-content .hero-actions a.ui-button:visited {
+    background: transparent !important;
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: none;
+  }
+
+  :root[data-theme="dark"] .hero .hero-content .hero-actions a.ui-button:hover,
+  :root[data-theme="dark"] .hero .hero-content .hero-actions a.ui-button:focus-visible {
+    background: transparent !important;
+    border-color: rgba(255, 255, 255, 0.82);
+    box-shadow: none;
+  }
+}
+
+/* Keep responsive layout overrides above the component layer in the cascade. */
+@media (max-width: 1050px) {
+  #about {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-photo-stack {
+    right: 0;
+  }
+
+  .admissions {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    padding: clamp(36px, 6vw, 48px) clamp(24px, 5vw, 40px);
+  }
+
+  .admissions-content,
+  .admissions-side {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  #about {
+    gap: 28px;
+  }
+
+  .about-visual {
+    margin-right: 0;
+  }
+
+  .about-photo-stack {
+    right: 0;
+    gap: 6px;
+  }
+
+  .about-small-image {
+    width: clamp(90px, 24vw, 140px);
+    height: clamp(120px, 31vw, 175px);
+  }
+
+  .admissions {
+    padding: 32px clamp(18px, 5vw, 28px);
+  }
+
+  .admissions-description {
+    overflow-wrap: anywhere;
+  }
 }

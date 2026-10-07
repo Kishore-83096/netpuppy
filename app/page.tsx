@@ -3,11 +3,11 @@ import CustomCursor from "../components/animation/CustomCursor";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import Hero from "../components/sections/Hero";
-import About from "../components/sections/About";
+import AboutTIS from "../components/sections/AboutTIS";
 import Academics from "../components/sections/Academics";
-import Facilities from "../components/sections/Facilities";
-import StudentExperience from "../components/sections/StudentExperience";
-import Admissions from "../components/sections/Admissions";
+import BeyondAcademics from "../components/sections/BeyondAcademics";
+import BoardingLife from "../components/sections/BoardingLife";
+import Admission from "../components/sections/Admission";
 
 export default function Home() {
   return (
@@ -18,11 +18,11 @@ export default function Home() {
 
       <main>
         <Hero />
-        <About />
+        <AboutTIS />
         <Academics />
-        <StudentExperience />
-        <Facilities />
-        <Admissions />
+        <BeyondAcademics />
+        <BoardingLife />
+        <Admission />
       </main>
 
       <Footer />

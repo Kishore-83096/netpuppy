@@ -6,29 +6,26 @@ const facilities = [
   {
     number: "01",
     title: "Taekwondo",
-    image:
-      "https://tis.edu.in/_next/static/media/karate.4020fba5.webp",
-    alt: "Taekwondo",
+    image: "/taekwondo-training.png",
+    alt: "Tulas students practicing Taekwondo",
   },
   {
     number: "02",
     title: "Football",
-    image:
-      "https://tis.edu.in/_next/static/media/Image%202.0c5295c9.webp",
-    alt: "Football",
+    image: "/football-team.png",
+    alt: "Tulas students playing football on the school grounds",
   },
   {
     number: "03",
-    title: "Shooting Range",
-    image:
-      "https://tis.edu.in/_next/static/media/Image%203.21dc9e69.webp",
-    alt: "Shooting Range",
+    title: "Archery",
+    image: "/archery-range.png",
+    alt: "Tulas students practicing archery on the school grounds",
   },
   {
     number: "04",
     title: "Horse Riding",
-    image: "https://tis.edu.in/_next/static/media/polo.973ddbae.webp",
-    alt: "Horse Riding",
+    image: "/horse-riding.png",
+    alt: "Tulas students riding horses at the school",
   },
 ];
 

@@ -52,7 +52,7 @@ export default function Navbar() {
           onClick={closeMenu}
         >
           <Image
-            src="https://tis.edu.in/_next/static/media/schoolLogo.95f6e121.png"
+            src="/tulas-school-logo.png"
             alt="Tulas International School"
             width={180}
             height={60}
@@ -83,11 +83,11 @@ export default function Navbar() {
           <a href="#academics" onClick={closeMenu}>
             Academics
           </a>
-          <a href="#boarding" onClick={closeMenu}>
-            Boarding Life
-          </a>
           <a href="#facilities" onClick={closeMenu}>
             Beyond Academics
+          </a>
+          <a href="#boarding" onClick={closeMenu}>
+            Boarding Life
           </a>
           <a href="#admissions" onClick={closeMenu}>
             Admission

@@ -27,17 +27,19 @@ export default function Admissions() {
             Landline No. 0135-2699444, 0135-2699666
           </p>
 
-          <Button href="mailto:info@tis.edu.in">
-            Enquire Now!
-            <span>↗</span>
-          </Button>
-          <Button
-            href="https://admission.tis.edu.in"
-            className="admissions-button"
-          >
-            Apply Now
-            <span>↗</span>
-          </Button>
+          <div className="admissions-actions">
+            <Button href="mailto:info@tis.edu.in">
+              Enquire Now!
+              <span>↗</span>
+            </Button>
+            <Button
+              href="https://admission.tis.edu.in"
+              className="admissions-button"
+            >
+              Apply Now
+              <span>↗</span>
+            </Button>
+          </div>
         </Reveal>
       </div>
 
@@ -59,7 +61,7 @@ export default function Admissions() {
             <span>BOARDING AND DAY SCHOOL</span>
             <strong>TIS</strong>
             <Image
-              src="https://tis.edu.in/_next/static/media/schoolLogo.95f6e121.png"
+              src="/tulas-school-logo.png"
               alt=""
               width={52}
               height={52}
