@@ -71,6 +71,36 @@ No automated test script is configured in the project.
 
 The homepage was manually checked at 375px mobile, 768px tablet, 1280px desktop, and 1440px desktop widths. The browser console and network checks showed no console warnings or errors, missing resources, or hydration errors; images loaded correctly and responsive behavior worked as expected.
 
-## Preview
+## Screenshots
 
-![Tulas International School homepage preview](./public/live-demo-preview.png)
+<table>
+  <tr>
+    <th align="center">Homepage</th>
+    <th align="center">Academics</th>
+  </tr>
+  <tr>
+    <td align="center"><img src="./public/screenshots/homepage.png" width="360" alt="Tulas International School homepage"></td>
+    <td align="center"><img src="./public/screenshots/academics.png" width="360" alt="Academics section of the Tulas International School homepage"></td>
+  </tr>
+  <tr>
+    <th align="center">Beyond Academics</th>
+    <th align="center">Admissions</th>
+  </tr>
+  <tr>
+    <td align="center"><img src="./public/screenshots/beyond-academics.png" width="360" alt="Beyond Academics section of the Tulas International School homepage"></td>
+    <td align="center"><img src="./public/screenshots/admissions.png" width="360" alt="Admissions section and footer of the Tulas International School homepage"></td>
+  </tr>
+</table>
+
+## Theme previews
+
+<table>
+  <tr>
+    <th align="center">Light mode</th>
+    <th align="center">Dark mode</th>
+  </tr>
+  <tr>
+    <td align="center"><img src="./public/screenshots/light-mode.png" width="560" alt="Tulas International School homepage in light mode"></td>
+    <td align="center"><img src="./public/screenshots/dark-mode.png" width="560" alt="Tulas International School homepage in dark mode"></td>
+  </tr>
+</table>
