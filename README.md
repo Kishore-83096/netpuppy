@@ -216,7 +216,7 @@ This diagram shows how a visitor reaches the homepage, how its sections use shar
 
 ![TIS homepage architecture diagram](./public/diagram.png)
 
-The diagram is included in the repository, so the README does not depend on an external image service to display it.
+The diagram is included in the repository, so the README does not depend on an external image service to display it. [Explore the interactive architecture diagram](https://gitdiagram.com/kishore-83096/netpuppy).
 
 ## How the project fits together
 
