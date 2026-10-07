@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import Reveal from "../animation/Reveal";
 import SectionHeading from "../ui/SectionHeading";
 
@@ -56,6 +57,12 @@ export default function StudentExperience() {
           <Reveal key={experience.number} delay={index * 0.1}>
             <article
               className={`experience-item${expandedExperience === experience.id ? " is-expanded" : ""}`}
+              onMouseEnter={() => setExpandedExperience(experience.id)}
+              onMouseLeave={() =>
+                setExpandedExperience((expanded) =>
+                  expanded === experience.id ? null : expanded,
+                )
+              }
             >
               <button
                 type="button"
@@ -76,13 +83,24 @@ export default function StudentExperience() {
                   {expandedExperience === experience.id ? "−" : "+"}
                 </span>
               </button>
-              <div
-                id={`${experience.id}-details`}
-                className="experience-details"
-                hidden={expandedExperience !== experience.id}
-              >
-                <p>{experience.description}</p>
-              </div>
+              <AnimatePresence initial={false}>
+                {expandedExperience === experience.id && (
+                  <motion.div
+                    id={`${experience.id}-details`}
+                    className="experience-details"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{
+                      height: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
+                      opacity: { duration: 0.2 },
+                    }}
+                    style={{ overflow: "hidden" }}
+                  >
+                    <p>{experience.description}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </article>
           </Reveal>
         ))}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import Reveal from "../animation/Reveal";
 import SectionHeading from "../ui/SectionHeading";
@@ -43,22 +44,11 @@ export default function About() {
           </Reveal>
 
           <Reveal delay={0.3}>
-            <div className="about-more-wrap">
-              <div id="about-more" className="about-more" hidden={!isExpanded}>
-                <p>
-                  TIS aims to help students realize their full potential and
-                  become independent learners who understand their social,
-                  moral, and cultural responsibilities. Learning is intended to
-                  support students academically as well as mentally,
-                  emotionally, spiritually, and creatively.
-                </p>
-                <p>
-                  The school describes its community values as equity and
-                  engagement: creating a supportive environment, encouraging
-                  active learning, and guiding students to make the most of
-                  their abilities.
-                </p>
-              </div>
+            <div
+              className="about-more-wrap"
+              onMouseEnter={() => setIsExpanded(true)}
+              onMouseLeave={() => setIsExpanded(false)}
+            >
               <button
                 type="button"
                 className="content-toggle"
@@ -69,6 +59,36 @@ export default function About() {
                 {isExpanded ? "Read less" : "Get to know TIS"}
                 <span aria-hidden="true">{isExpanded ? "−" : "↗"}</span>
               </button>
+              <AnimatePresence initial={false}>
+                {isExpanded && (
+                  <motion.div
+                    id="about-more"
+                    className="about-more"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{
+                      height: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
+                      opacity: { duration: 0.2 },
+                    }}
+                    style={{ overflow: "hidden" }}
+                  >
+                    <p>
+                      TIS aims to help students realize their full potential and
+                      become independent learners who understand their social,
+                      moral, and cultural responsibilities. Learning is intended
+                      to support students academically as well as mentally,
+                      emotionally, spiritually, and creatively.
+                    </p>
+                    <p>
+                      The school describes its community values as equity and
+                      engagement: creating a supportive environment, encouraging
+                      active learning, and guiding students to make the most of
+                      their abilities.
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </Reveal>
         </div>
