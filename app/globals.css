@@ -3004,35 +3004,6 @@
     border-radius: 28px;
   }
 
-  .site-header {
-    background: rgba(11, 9, 15, 0.96);
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-  }
-
-  .nav-links a {
-    color: rgba(255, 255, 255, 0.82);
-  }
-
-  .nav-links a:hover {
-    background: transparent;
-    color: #ffffff;
-  }
-
-  .mobile-menu-button {
-    background: #17141d;
-    border-color: rgba(255, 255, 255, 0.18);
-  }
-
-  .mobile-menu-button span {
-    background: #ffffff;
-  }
-
-  .theme-toggle {
-    background: #17141d;
-    border-color: rgba(255, 255, 255, 0.18);
-    color: #ffffff;
-  }
-
   footer {
     gap: 28px;
     padding: 22px 0;
