@@ -7,19 +7,12 @@ import Button from "../ui/Button";
 export default function Hero() {
   return (
     <section className="hero">
+      <Reveal>
+        <h1>Tulas International School</h1>
+      </Reveal>
+
       <div className="hero-content">
-        <Reveal>
-          <p className="hero-eyebrow">Tulas International School · Dehradun</p>
-        </Reveal>
-
         <Reveal delay={0.1}>
-          <h1>
-            A brighter future
-            <span>starts here.</span>
-          </h1>
-        </Reveal>
-
-        <Reveal delay={0.2}>
           <p className="hero-description">
             A place to learn with purpose, explore new interests, and grow into
             a confident, compassionate global citizen.

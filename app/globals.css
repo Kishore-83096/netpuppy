@@ -2067,10 +2067,6 @@
       74px;
   }
 
-  .hero > :last-child {
-    order: -1;
-  }
-
   .hero h1 {
     max-width: 15ch;
 
@@ -2508,6 +2504,10 @@
       radial-gradient(ellipse at 28% 24%, rgba(124, 67, 232, 0.44), transparent 43%),
       linear-gradient(90deg, rgba(7, 6, 9, 0.94), rgba(7, 6, 9, 0.8) 55%, rgba(7, 6, 9, 0.5)),
       url("/school-campus.webp") center / cover;
+  }
+
+  .hero > :first-child {
+    grid-column: 1 / -1;
   }
 
   .hero-content {
@@ -3061,7 +3061,12 @@
     padding: clamp(36px, 5vw, 54px);
   }
 
+  .hero-content {
+    order: 1;
+  }
+
   .hero-visual {
+    order: 2;
     min-height: 410px;
   }
 
@@ -3087,11 +3092,12 @@
     padding: 30px 22px 34px;
   }
 
-  .hero > :last-child {
-    order: -1;
+  .hero-content {
+    order: initial;
   }
 
   .hero-visual {
+    order: initial;
     width: calc(100% - 8px);
     min-height: clamp(260px, 68vw, 410px);
     margin: 0 auto;
