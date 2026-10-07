@@ -30,6 +30,7 @@ function getServerThemeSnapshot(): Theme {
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [headerHidden, setHeaderHidden] = useState(false);
   const theme = useSyncExternalStore(
     subscribeToTheme,
     getThemeSnapshot,
@@ -40,10 +41,34 @@ export default function Navbar() {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 
+  useEffect(() => {
+    let previousScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollDelta = currentScrollY - previousScrollY;
+
+      if (currentScrollY <= 120) {
+        setHeaderHidden(false);
+      } else if (Math.abs(scrollDelta) >= 8) {
+        setHeaderHidden(scrollDelta > 0);
+      }
+
+      if (Math.abs(scrollDelta) >= 8 || currentScrollY <= 120) {
+        previousScrollY = currentScrollY;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="site-header">
+    <header
+      className={`site-header${headerHidden && !menuOpen ? " is-hidden" : ""}`}
+    >
       <nav className="site-nav">
         <a
           href="#"

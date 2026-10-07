@@ -335,6 +335,14 @@
 
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    transition:
+      transform 650ms var(--ease-smooth),
+      background-color var(--transition-normal),
+      color var(--transition-normal);
+  }
+
+  .site-header.is-hidden {
+    transform: translateY(calc(-100% - 1px));
   }
 
   .site-nav {
@@ -2416,8 +2424,7 @@
     height: 19px;
   }
 
-  body,
-  .site-header {
+  body {
     transition:
       background-color var(--transition-normal),
       color var(--transition-normal);
@@ -3277,7 +3284,47 @@
   }
 }
 
+@media (min-width: 761px) and (max-width: 1050px) {
+  .nav-links {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity var(--transition-normal),
+      transform var(--transition-normal),
+      visibility var(--transition-normal);
+  }
+
+  .nav-links.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 760px) {
+  .nav-links {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity var(--transition-normal),
+      transform var(--transition-normal),
+      visibility var(--transition-normal);
+  }
+
+  .nav-links.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
   :root:not([data-theme="dark"]) .nav-links a {
     color: var(--foreground-soft);
   }
