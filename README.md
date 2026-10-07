@@ -30,7 +30,9 @@ A responsive, single-page homepage concept for Tulas International School (TIS).
 
 ## Live demo preview
 
-This preview image is now used as the main visual for the live demo link and social sharing card:
+### Homepage screenshot
+
+This screenshot previews the redesigned homepage. The image is stored in this repository at `public/live-demo-preview.png`.
 
 ![Tulas International School homepage preview](./public/live-demo-preview.png)
 
@@ -208,7 +210,13 @@ README.md
 
 ### Architecture diagram
 
-The generated diagrams in `public/` are snapshots and may contain older component names. Use the application structure and component file table in this README as the source of truth for the current project layout.
+#### How the homepage is organized
+
+This diagram shows how a visitor reaches the homepage, how its sections use shared styles and components, and where navigation, animations, and admission links fit in. The image is stored locally at `public/diagram.png`.
+
+![TIS homepage architecture diagram](./public/diagram.png)
+
+The diagram is included in the repository, so the README does not depend on an external image service to display it.
 
 ## How the project fits together
 
@@ -284,9 +292,9 @@ For the Vercel steps to work, the GitHub repository needs these **Actions secret
 
 ## Images and external services
 
-The school logo and images used by the homepage are bundled in `public/` and referenced by filename from the page components. They do not depend on remote image URLs at runtime. `next.config.ts` permits images from `images.unsplash.com`, but the current homepage does not use that remote image host. Check image availability and usage rights before publishing.
+All pictures displayed in the homepage and this README are stored in the project's `public/` folder. The README uses relative paths to those files, so it does not load pictures from third-party image hosts. The site also uses these local assets at runtime.
 
-The web font is fetched/handled through Next.js font tooling. A network connection may be required when setting up or building in a clean environment, depending on the font cache.
+The web font is handled through Next.js font tooling. A network connection may be required when setting up or building in a clean environment, depending on the font cache.
 
 ## Deployment
 
